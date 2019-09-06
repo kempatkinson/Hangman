@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Guessing Game</title>
+</head>
+
+<body>
+    <p> What letter am I thinking of?</p>
+    <p> Guesses: <span id="count"> 0 </span> </p>
+
+    <script>
+        var alphabet = [
+            "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
+             "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        var guesses = 0;
+        var computer = alphabet[Math.floor(Math.random() * alphabet.length)]
+        document.onkeyup = function(event) {
+           var guess = event.key;
+           
+           if (guess == computer) {
+               alert("You Win! Refresh the page to try again.")
+           }   else  {
+               guesses ++;
+               count.textContent = guesses;
+
+           }
+        }
+        
+    </script>
+</body>
+
+</html>
